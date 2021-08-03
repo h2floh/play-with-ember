@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    shell: bash
+    working-directory: scripts
+
 jobs:
   embertest:
     name: Ember Testing
@@ -15,12 +20,6 @@ jobs:
         with:
           node-version: 16.x
       - name: install dependencies
-        run: 
-          shell: |
-            npm install
-          working-directory: super-rentals
+        run: npm install
       - name: run tests
-        run:
-          shell: |
-            ember test
-          working-directory: super-rentals
+        run: ember test
