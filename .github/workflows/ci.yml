@@ -22,4 +22,4 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run tests
-        run: ember test
+        run: npx ember test
