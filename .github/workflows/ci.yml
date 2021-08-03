@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  embertest:
+    name: Ember Testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: install dependencies
+        run: 
+          shell: |
+            npm install
+          working-directory: super-rentals
+      - name: run tests
+        run:
+          shell: |
+            ember test
+          working-directory: super-rentals

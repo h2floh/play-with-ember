@@ -66,5 +66,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "chrome-launcher": "^0.14.0"
   }
 }
